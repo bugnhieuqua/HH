@@ -2,9 +2,8 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Giải chi tiết 18 bài tập Hình học không gian</title>
-    <!-- MathJax để hiển thị công thức đẹp -->
     <script>
         MathJax = {
             tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
@@ -13,60 +12,39 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             background: #f0f4f8;
             padding: 24px;
             color: #0b1e33;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .container { max-width: 1200px; margin: 0 auto; }
         header {
             background: linear-gradient(145deg, #0b2a44, #1e4a76);
             color: white;
             padding: 28px 24px;
             border-radius: 20px;
             margin-bottom: 36px;
-            box-shadow: 0 12px 24px rgba(0, 20, 40, 0.25);
+            box-shadow: 0 12px 24px rgba(0,20,40,0.25);
         }
-        header h1 {
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        header p {
-            margin-top: 8px;
-            opacity: 0.85;
-            font-size: 18px;
-        }
+        header h1 { font-size: 32px; font-weight: 700; display: flex; align-items: center; gap: 12px; }
+        header p { margin-top: 8px; opacity: 0.85; font-size: 18px; }
         .problem {
             background: white;
             border-radius: 20px;
             padding: 28px 30px;
             margin-bottom: 40px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
             border-left: 8px solid #1e4a76;
-            transition: all 0.2s;
         }
-        .problem:hover {
-            border-left-color: #f59e0b;
-        }
+        .problem:hover { border-left-color: #f59e0b; }
         .problem h2 {
             font-size: 24px;
             color: #0b2a44;
-            margin-bottom: 14px;
             border-bottom: 2px dashed #d1d9e6;
             padding-bottom: 10px;
+            margin-bottom: 14px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -80,13 +58,8 @@
             border-left: 4px solid #3b82f6;
             line-height: 1.6;
         }
-        .problem .de strong {
-            color: #b91c1c;
-        }
-        .hinh {
-            text-align: center;
-            margin: 18px 0;
-        }
+        .problem .de strong { color: #b91c1c; }
+        .hinh { text-align: center; margin: 18px 0; }
         .hinh canvas {
             border: 1px solid #cbd5e1;
             border-radius: 16px;
@@ -101,10 +74,7 @@
             margin-top: 16px;
             border: 1px solid #e9edf4;
         }
-        .solution .step {
-            margin: 10px 0;
-            line-height: 1.7;
-        }
+        .solution .step { margin: 10px 0; line-height: 1.7; }
         .solution .formula-box {
             background: #e6f0fa;
             padding: 10px 16px;
@@ -138,13 +108,7 @@
             color: #7f1d1d;
             margin: 12px 0;
         }
-        .footer {
-            text-align: center;
-            padding: 28px 0 10px;
-            color: #6b7a8f;
-            font-size: 15px;
-            border-top: 1px solid #dce3ec;
-        }
+        .footer { text-align: center; padding: 28px 0 10px; color: #6b7a8f; font-size: 15px; border-top: 1px solid #dce3ec; }
         @media (max-width: 650px) {
             .problem { padding: 18px 16px; }
             header h1 { font-size: 24px; flex-wrap: wrap; }
@@ -155,10 +119,10 @@
 <div class="container">
     <header>
         <h1>📐 18 Bài tập Hình học không gian</h1>
-        <p>Lời giải chi tiết, công thức đầy đủ, tham chiếu trang (tài liệu PDF) và hình vẽ minh họa</p>
+        <p>Lời giải chi tiết, công thức đầy đủ, tham chiếu trang và hình vẽ minh họa</p>
     </header>
 
-    <!-- ==================== BÀI 1 ==================== -->
+    <!-- ========== BÀI 1 ========== -->
     <div class="problem" id="bai1">
         <h2>Bài 1. Thể tích &amp; bán kính mặt cầu ngoại tiếp tứ diện</h2>
         <div class="de">
@@ -166,478 +130,258 @@
         </div>
         <div class="hinh"><canvas id="h1" width="300" height="240"></canvas></div>
         <div class="solution">
-            <div class="step"><strong>🔹 Bước 1:</strong> Đặt tên cạnh theo công thức trang 1.  
-            \(a=AB=7,\; b=AC=6,\; c=AD=7,\; d=BC=4,\; e=BD=5,\; f=CD=4\).</div>
-            <div class="step"><strong>🔹 Bước 2:</strong> Tính tổng bình phương \(M = a^2+b^2+c^2+d^2+e^2+f^2 = 49+36+49+16+25+16 = 191\).</div>
-            <div class="step"><strong>🔹 Bước 3:</strong> Tính các giá trị trung gian (công thức trang 1):
+            <div class="step"><strong>🔹 Bước 1:</strong> Đặt \(a=AB=7,\; b=AC=6,\; c=AD=7,\; d=BC=4,\; e=BD=5,\; f=CD=4\).</div>
+            <div class="step"><strong>🔹 Bước 2:</strong> Tính \(M = a^2+b^2+c^2+d^2+e^2+f^2 = 191\).</div>
+            <div class="step"><strong>🔹 Bước 3:</strong> Tính \(X,Y,Z,N\) theo công thức trang 1:
             \[
-            X = a^2 f^2 [M - 2(a^2+f^2)] = 49\cdot16\cdot(191-2\cdot65)=784\cdot61=47824
-            \]
-            \[
-            Y = b^2 e^2 [M - 2(b^2+e^2)] = 36\cdot25\cdot(191-2\cdot61)=900\cdot69=62100
-            \]
-            \[
-            Z = c^2 d^2 [M - 2(c^2+d^2)] = 49\cdot16\cdot(191-2\cdot65)=47824
-            \]
-            \[
-            N = a^2b^2d^2 + b^2c^2f^2 + a^2c^2e^2 + d^2e^2f^2
-            = 28224 + 28224 + 60025 + 6400 = 122873
+            X = a^2 f^2 [M - 2(a^2+f^2)] = 47824,\quad
+            Y = b^2 e^2 [M - 2(b^2+e^2)] = 62100,\quad
+            Z = 47824,\quad N = 122873.
             \]
             </div>
             <div class="step"><strong>🔹 Bước 4:</strong> Thể tích:
             \[
-            V = \frac{1}{12}\sqrt{X+Y+Z-N} = \frac{1}{12}\sqrt{47824+62100+47824-122873} = \frac{1}{12}\sqrt{34875}
-            \]
-            \[
-            = \frac{1}{12}\cdot 15\sqrt{155} = \frac{5\sqrt{155}}{4} \approx 15.5624
+            V = \frac{1}{12}\sqrt{X+Y+Z-N} = \frac{5\sqrt{155}}{4} \approx 15.5624.
             \]
             </div>
-            <div class="step"><strong>🔹 Bước 5:</strong> Bán kính mặt cầu ngoại tiếp (công thức trang 2).  
-            Tích các cặp cạnh đối: \(X'=a f=28,\; Y'=c d=28,\; Z'=b e=30\).  
-            Nửa chu vi tam giác: \(p = \frac{28+28+30}{2}=43\).  
-            Diện tích tam giác: \(S = \sqrt{43\cdot15\cdot15\cdot13} = 15\sqrt{559}\).  
-            Vậy:
+            <div class="step"><strong>🔹 Bước 5:</strong> Bán kính (trang 2): \(X'=a f=28,\; Y'=c d=28,\; Z'=b e=30\).  
+            \(p = \frac{28+28+30}{2}=43\), \(S = \sqrt{43\cdot15\cdot15\cdot13}=15\sqrt{559}\).  
             \[
-            R = \frac{S}{6V} = \frac{15\sqrt{559}}{6\cdot \frac{5\sqrt{155}}{4}} = \sqrt{\frac{2236}{155}} \approx 3.7981
+            R = \frac{S}{6V} = \sqrt{\frac{2236}{155}} \approx 3.7981.
             \]
             </div>
             <div class="ref"><span>📄 Tham chiếu:</span> Công thức thể tích (trang 1) – Công thức bán kính (trang 2)</div>
         </div>
     </div>
 
-    <!-- ==================== BÀI 2 ==================== -->
+    <!-- ========== BÀI 2 ========== -->
     <div class="problem" id="bai2">
-        <h2>Bài 2. Thể tích hình chóp S.ABC từ góc và cạnh</h2>
-        <div class="de">
-            <strong>Đề:</strong> Cho \(AB=2,\; AC=3,\; \angle BAC = 50^\circ,\; SA=2,\; SB=2,\; SC=3\).
-        </div>
+        <h2>Bài 2. Thể tích hình chóp S.ABC</h2>
+        <div class="de"><strong>Đề:</strong> \(AB=2,\; AC=3,\; \angle BAC=50^\circ,\; SA=2,\; SB=2,\; SC=3\).</div>
         <div class="hinh"><canvas id="h2" width="300" height="220"></canvas></div>
         <div class="solution">
-            <div class="step"><strong>🔹 Bước 1:</strong> Tính \(BC\) bằng định lí cosin:
-            \[
-            BC^2 = AB^2 + AC^2 - 2\cdot AB\cdot AC\cdot \cos 50^\circ
-            = 4 + 9 - 12\cdot 0.6428 = 6.2864
-            \]
-            \[
-            \Rightarrow BC \approx 2.5073
-            \]
-            </div>
-            <div class="step"><strong>🔹 Bước 2:</strong> Áp dụng công thức Cayley–Menger (trang 1) cho tứ diện \(SABC\) với bộ cạnh:
-            \[
-            a=SA=2,\; b=SB=2,\; c=SC=3,\; d=AB=2,\; e=AC=3,\; f=BC\approx2.5073
-            \]
-            </div>
-            <div class="step"><strong>🔹 Bước 3:</strong> Tính toán tương tự bài 1, ta thu được:
-            \[
-            V \approx 1.567
-            \]
-            </div>
-            <div class="ref"><span>📄 Tham chiếu:</span> Định lí cos – Công thức Cayley–Menger (trang 1)</div>
+            <div class="step">Tính \(BC\): \(BC^2 = 4+9-12\cos50^\circ \Rightarrow BC\approx2.5073\).</div>
+            <div class="step">Áp dụng Cayley–Menger với bộ cạnh \((SA,SB,SC,AB,AC,BC)\), được \(V\approx1.567\).</div>
+            <div class="ref"><span>📄 Tham chiếu:</span> Định lí cos – Cayley–Menger (trang 1)</div>
         </div>
     </div>
 
-    <!-- ==================== BÀI 3 ==================== -->
+    <!-- ========== BÀI 3 ========== -->
     <div class="problem" id="bai3">
         <h2>Bài 3. Thể tích hình chóp S.ABCD (đáy hình bình hành)</h2>
-        <div class="de">
-            <strong>Đề:</strong> \(SA = 2AB = AC = 4\), \(\widehat{SAB} = \widehat{SAC} = 50^\circ\), \(\widehat{BAC} = 70^\circ\).
-        </div>
+        <div class="de"><strong>Đề:</strong> \(SA=2AB=AC=4,\; \widehat{SAB}=\widehat{SAC}=50^\circ,\; \widehat{BAC}=70^\circ\).</div>
         <div class="hinh"><canvas id="h3" width="300" height="220"></canvas></div>
         <div class="solution">
-            <div class="step"><strong>🔹 Bước 1:</strong> Suy ra \(AB=2,\; AC=4\). Tính \(BC\):
-            \[
-            BC^2 = 2^2+4^2 - 2\cdot2\cdot4\cdot\cos70^\circ = 20 - 16\cdot0.342 = 14.528 \Rightarrow BC\approx3.8116
-            \]
-            </div>
-            <div class="step"><strong>🔹 Bước 2:</strong> Tính \(SB, SC\):
-            \[
-            SB^2 = SA^2+AB^2 - 2\cdot SA\cdot AB\cdot\cos50^\circ = 16+4 - 16\cdot0.6428 = 9.7152 \Rightarrow SB\approx3.117
-            \]
-            \[
-            SC^2 = 16+16 - 32\cdot0.6428 = 11.4304 \Rightarrow SC\approx3.381
-            \]
-            </div>
-            <div class="step"><strong>🔹 Bước 3:</strong> Dùng Cayley–Menger tính \(V_{SABC}\) với các cạnh \((SA,SB,SC,AB,AC,BC)\). Kết quả:
-            \[
-            V_{SABC} \approx 3.392
-            \]
-            </div>
-            <div class="step"><strong>🔹 Bước 4:</strong> Vì đáy \(ABCD\) là hình bình hành, \(S_{ABCD}=2S_{ABC}\) nên:
-            \[
-            V_{SABCD} = 2V_{SABC} \approx 6.784
-            \]
-            </div>
-            <div class="ref"><span>📄 Tham chiếu:</span> Định lí cos – Công thức Cayley–Menger (trang 1)</div>
+            <div class="step">Từ giả thiết: \(AB=2,\; AC=4\). Tính \(BC, SB, SC\) bằng định lí cos.</div>
+            <div class="step">Dùng Cayley–Menger tính \(V_{SABC}\approx3.392\). Vì \(S_{ABCD}=2S_{ABC}\) nên \(V_{SABCD}=2V_{SABC}\approx6.784\).</div>
+            <div class="ref"><span>📄 Tham chiếu:</span> Định lí cos – Cayley–Menger (trang 1)</div>
         </div>
     </div>
 
-    <!-- ==================== BÀI 4 ==================== -->
+    <!-- ========== BÀI 4 ========== -->
     <div class="problem" id="bai4">
         <h2>Bài 4. Hình chóp đều + mặt phẳng cắt</h2>
-        <div class="de">
-            <strong>Đề:</strong> \(ABC\) đều cạnh 3, \(SA\perp (ABC)\), góc giữa \(SC\) và đáy bằng \(60^\circ\). <br/>
-            Gọi \(P,Q\) là trọng tâm của \(\triangle SAB, \triangle SAC\). \(D\) đối xứng \(A\) qua \(B\). Mặt phẳng \((DPQ)\) chia khối chóp, gọi \(V_1\) là phần chứa \(S\). Tính \(V_1\).
-        </div>
+        <div class="de"><strong>Đề:</strong> Đáy ABC đều cạnh 3, \(SA\perp(ABC)\), góc giữa SC và đáy là 60°. P, Q là trọng tâm SAB, SAC. D đối xứng A qua B. Mặt phẳng (DPQ) chia khối chóp, tính \(V_1\) (phần chứa S).</div>
         <div class="hinh"><canvas id="h4" width="300" height="240"></canvas></div>
         <div class="solution">
-            <div class="step"><strong>🔹 Bước 1:</strong> Vì \(SA\perp\) đáy, góc giữa \(SC\) và đáy là \(\widehat{SCA}=60^\circ\). Trong tam giác vuông \(SAC\):
-            \[
-            SA = AC\cdot\tan 60^\circ = 3\sqrt{3}
-            \]
-            </div>
-            <div class="step"><strong>🔹 Bước 2:</strong> Thể tích toàn phần:
-            \[
-            V_{SABC} = \frac13 \cdot S_{\triangle ABC} \cdot SA = \frac13 \cdot \frac{9\sqrt3}{4} \cdot 3\sqrt3 = \frac{27}{4} = 6.75
-            \]
-            </div>
-            <div class="step"><strong>🔹 Bước 3:</strong> Dùng phương pháp tọa độ hoặc tỉ số thể tích. Đặt \(B(0,0,0), C(3,0,0), A(1.5,\frac{3\sqrt3}{2},0)\), \(S(1.5,\frac{3\sqrt3}{2},3\sqrt3)\). Tính được \(P,Q,D\). Mặt phẳng \((DPQ)\) cắt \(SC\) tại \(R\) với tỉ số \(\frac{SR}{RC} = \frac{1}{2}\). Áp dụng công thức tỉ lệ thể tích, ta được:
-            \[
-            V_1 \approx 2.156
-            \]
-            </div>
-            <div class="ref"><span>📄 Tham chiếu:</span> Công thức thể tích chóp (trang 1) – Tỉ số thể tích</div>
+            <div class="step">\(SA = AC\tan60^\circ = 3\sqrt{3}\). \(V_{SABC} = \frac13\cdot\frac{9\sqrt3}{4}\cdot3\sqrt3 = \frac{27}{4}\).</div>
+            <div class="step">Dùng tỉ số thể tích hoặc tọa độ, tìm được \(V_1 \approx 2.156\).</div>
+            <div class="ref"><span>📄 Tham chiếu:</span> Thể tích chóp (trang 1) – Tỉ số thể tích</div>
         </div>
     </div>
 
-    <!-- ==================== BÀI 5 ==================== -->
+    <!-- ========== BÀI 5 ========== -->
     <div class="problem" id="bai5">
-        <h2>Bài 5. Tứ diện với trọng tâm và đường vuông góc</h2>
-        <div class="de">
-            <strong>Đề:</strong> \(\triangle BCD\) có \(BD=6,\; BC=8,\; CD=9\). \(G\) là trọng tâm. \(AG\perp (BCD)\), \(AG=6\).
-        </div>
+        <h2>Bài 5. Tứ diện với trọng tâm</h2>
+        <div class="de"><strong>Đề:</strong> \(\triangle BCD\) có \(BD=6,\; BC=8,\; CD=9\). G trọng tâm, \(AG\perp(BCD),\; AG=6\).</div>
         <div class="hinh"><canvas id="h5" width="300" height="220"></canvas></div>
         <div class="solution">
-            <div class="step"><strong>🔹 Bước 1:</strong> Đặt hệ trục \(B(0;0;0)\), \(D(6;0;0)\). Tìm \(C(x_C;y_C;0)\):
-            \[
-            x_C = \frac{BC^2 + BD^2 - CD^2}{2\cdot BD} = \frac{64+36-81}{12} = \frac{19}{12}
-            \]
-            \[
-            y_C = \sqrt{64 - \left(\frac{19}{12}\right)^2} = \frac{\sqrt{8855}}{12}
-            \]
-            </div>
-            <div class="step"><strong>🔹 Bước 2:</strong> Trọng tâm \(G = \frac{B+C+D}{3} = \left(\frac{91}{36};\frac{\sqrt{8855}}{36};0\right)\). Vậy \(A = \left(\frac{91}{36};\frac{\sqrt{8855}}{36};6\right)\).</div>
-            <div class="step"><strong>🔹 Bước 3:</strong> Tính khoảng cách:
-            \[
-            AB = \sqrt{\left(\frac{91}{36}\right)^2 + \left(\frac{\sqrt{8855}}{36}\right)^2 + 6^2} \approx 7.674
-            \]
-            \[
-            AC \approx 5.974,\quad AD \approx 8.215
-            \]
-            </div>
-            <div class="step"><strong>🔹 Bước 4:</strong> Góc giữa \((ABD)\) và \((ACD)\): dùng tích có hướng tìm vectơ pháp tuyến, tính được \(\angle \approx 78.2^\circ\).</div>
-            <div class="step"><strong>🔹 Bước 5:</strong> Bán kính \(R\) dùng Cayley–Menger với bộ cạnh đầy đủ, được \(R \approx 5.634\).</div>
-            <div class="ref"><span>📄 Tham chiếu:</span> Khoảng cách, góc (trang 1) – Cayley–Menger (trang 1–2)</div>
+            <div class="step">Đặt hệ trục, tìm tọa độ C, G, A. Tính được \(AB\approx7.674,\; AC\approx5.974,\; AD\approx8.215\).</div>
+            <div class="step">Góc giữa (ABD) và (ACD) ≈ 78.2°, bán kính R ≈ 5.634.</div>
+            <div class="ref"><span>📄 Tham chiếu:</span> Khoảng cách, góc (trang 1) – Cayley–Menger</div>
         </div>
     </div>
 
-    <!-- ==================== BÀI 6 ==================== -->
+    <!-- ========== BÀI 6 ========== -->
     <div class="problem" id="bai6">
         <h2>Bài 6. Hình chóp với trung điểm và giao điểm</h2>
-        <div class="de">
-            <strong>Đề:</strong> \(\triangle ABC\): \(AB=5.2,\; BC=7.4,\; CA=6.9\). \(M\) trung điểm \(BC\), \(N\in AC\) sao cho \(AC=3AN\). \(I=AM\cap BN\). \(SI\perp (ABC)\), \(SI=6\). Tính \(SA,SB,SC\), chiều cao \(BK\), bán kính \(R\).
-        </div>
+        <div class="de"><strong>Đề:</strong> Tam giác ABC có \(AB=5.2,\; BC=7.4,\; CA=6.9\). M trung điểm BC, N trên AC sao cho AC=3AN. I=AM∩BN, SI⊥(ABC), SI=6. Tính SA, SB, SC, chiều cao BK, bán kính R.</div>
         <div class="hinh"><canvas id="h6" width="300" height="220"></canvas></div>
         <div class="solution">
-            <div class="step"><strong>🔹 Bước 1:</strong> Tọa độ hóa trong mặt phẳng: \(A(0;0), B(5.2;0)\). Tìm \(C\):
-            \[
-            x_C = \frac{AB^2+AC^2-BC^2}{2\cdot AB} = \frac{27.04+47.61-54.76}{10.4} \approx 1.9125
-            \]
-            \[
-            y_C = \sqrt{AC^2 - x_C^2} = \sqrt{47.61 - 3.658} \approx 6.629
-            \]
-            </div>
-            <div class="step"><strong>🔹 Bước 2:</strong> \(M = \frac{B+C}{2}\), \(N = \frac{C}{3}\). Giải hệ tìm \(I = AM \cap BN\), được \(I(1.52; 3.14)\).</div>
-            <div class="step"><strong>🔹 Bước 3:</strong> \(S(I_x; I_y; 6)\). Tính:
-            \[
-            SA = \sqrt{I_x^2+I_y^2+36} \approx 6.21,\quad
-            SB \approx 5.87,\quad SC \approx 6.43
-            \]
-            </div>
-            <div class="step"><strong>🔹 Bước 4:</strong> Thể tích \(V = \frac13 S_{\triangle ABC}\cdot 6\). Chiều cao từ \(B\) đến mặt phẳng \((SAC)\):
-            \[
-            BK = \frac{3V}{S_{\triangle SAC}} \approx 4.52
-            \]
-            </div>
-            <div class="step"><strong>🔹 Bước 5:</strong> Bán kính \(R\) dùng Cayley–Menger: \(R \approx 4.38\).</div>
-            <div class="ref"><span>📄 Tham chiếu:</span> Tọa độ – Khoảng cách (trang 1) – Cayley–Menger (trang 1–2)</div>
+            <div class="step">Tọa độ hóa, tìm I. Từ đó \(SA\approx6.21,\; SB\approx5.87,\; SC\approx6.43\).</div>
+            <div class="step">\(BK = \frac{3V}{S_{\triangle SAC}} \approx 4.52\), \(R \approx 4.38\).</div>
+            <div class="ref"><span>📄 Tham chiếu:</span> Tọa độ – Khoảng cách (trang 1) – Cayley–Menger</div>
         </div>
     </div>
 
-    <!-- ==================== BÀI 7 ==================== -->
+    <!-- ========== BÀI 7 ========== -->
     <div class="problem" id="bai7">
         <h2>Bài 7. Hình hộp chữ nhật và trọng tâm</h2>
-        <div class="de">
-            <strong>Đề:</strong> Hình hộp chữ nhật \(ABCD.A'B'C'D'\) có \(AB=2a,\; AD=a,\; AA'=2a\). \(G\) là trọng tâm \(\triangle A'B'C\). Biết \(V_{G.ABCD} = \frac{m}{n}a^3\). Tính \(P=m^2+n\).
-        </div>
+        <div class="de"><strong>Đề:</strong> Hình hộp \(AB=2a,\; AD=a,\; AA'=2a\). G là trọng tâm \(\triangle A'B'C\). Tính \(V_{G.ABCD} = \frac{m}{n}a^3\), tìm \(P=m^2+n\).</div>
         <div class="hinh"><canvas id="h7" width="300" height="220"></canvas></div>
         <div class="solution">
-            <div class="step"><strong>🔹 Bước 1:</strong> Đặt hệ trục: \(A(0;0;0), B(2a;0;0), D(0;a;0), A'(0;0;2a), B'(2a;0;2a), C(2a;a;0)\).</div>
-            <div class="step"><strong>🔹 Bước 2:</strong> Trọng tâm \(G = \frac{A'+B'+C}{3} = \left(\frac{4a}{3};\frac{a}{3};\frac{4a}{3}\right)\).</div>
-            <div class="step"><strong>🔹 Bước 3:</strong> Chiều cao từ \(G\) đến đáy \(ABCD\) (mặt \(z=0\)) là \(z_G = \frac{4a}{3}\). Diện tích đáy \(S_{ABCD}=2a\cdot a=2a^2\).</div>
-            <div class="step"><strong>🔹 Bước 4:</strong> Thể tích:
-            \[
-            V = \frac13 \cdot S_{ABCD} \cdot z_G = \frac13 \cdot 2a^2 \cdot \frac{4a}{3} = \frac{8a^3}{9}
-            \]
-            Suy ra \(\frac{m}{n} = \frac{8}{9} \Rightarrow m=8,\; n=9\). Vậy \(P = 8^2 + 9 = 73\).</div>
-            <div class="ref"><span>📄 Tham chiếu:</span> Công thức thể tích chóp (trang 1) – Tọa độ trong không gian</div>
+            <div class="step">Tọa độ: \(A(0,0,0), B(2a,0,0), D(0,a,0), A'(0,0,2a), B'(2a,0,2a), C(2a,a,0)\).</div>
+            <div class="step">\(G = \left(\frac{4a}{3}, \frac{a}{3}, \frac{4a}{3}\right)\). Chiều cao từ G đến đáy là \(z_G = \frac{4a}{3}\).</div>
+            <div class="step">\(V = \frac13 \cdot 2a^2 \cdot \frac{4a}{3} = \frac{8a^3}{9} \Rightarrow m=8, n=9 \Rightarrow P=8^2+9=73\).</div>
+            <div class="ref"><span>📄 Tham chiếu:</span> Công thức thể tích chóp (trang 1)</div>
         </div>
     </div>
 
-    <!-- ==================== BÀI 8 ==================== -->
+    <!-- ========== BÀI 8 ========== -->
     <div class="problem" id="bai8">
         <h2>Bài 8. Góc giữa các mặt bên và đáy</h2>
-        <div class="de">
-            <strong>Đề:</strong> Đáy \(ABC\) đều cạnh 10. Góc giữa \((SAB),(SAC),(SBC)\) với đáy lần lượt là \(45^\circ, 45^\circ, 60^\circ\).
-        </div>
+        <div class="de"><strong>Đề:</strong> Đáy ABC đều cạnh 10. Góc giữa (SAB), (SAC), (SBC) với đáy lần lượt là 45°, 45°, 60°.</div>
         <div class="hinh"><canvas id="h8" width="300" height="220"></canvas></div>
         <div class="solution">
-            <div class="step"><strong>🔹 Bước 1:</strong> Gọi \(H\) là hình chiếu của \(S\) lên đáy. Gọi khoảng cách từ \(H\) đến các cạnh \(AB, AC, BC\) lần lượt là \(x, y, z\).</div>
-            <div class="step"><strong>🔹 Bước 2:</strong> Vì góc giữa mặt bên và đáy có \(\tan \alpha = \frac{SH}{d(H, \text{cạnh})}\), ta có:
-            \[
-            \tan 45^\circ = \frac{SH}{x} = 1 \Rightarrow x = SH
-            \]
-            \[
-            \tan 45^\circ = \frac{SH}{y} = 1 \Rightarrow y = SH
-            \]
-            \[
-            \tan 60^\circ = \frac{SH}{z} = \sqrt{3} \Rightarrow z = \frac{SH}{\sqrt{3}}
-            \]
-            </div>
-            <div class="step"><strong>🔹 Bước 3:</strong> Trong tam giác đều, diện tích \(S_{ABC} = \frac12 \cdot 10 \cdot (x+y+z) = 25\sqrt{3}\).  
-            \(\Rightarrow 5\cdot SH \cdot \left(2 + \frac{1}{\sqrt{3}}\right) = 25\sqrt{3} \Rightarrow SH = \frac{15}{2\sqrt{3}+1}\).</div>
-            <div class="step"><strong>🔹 Bước 4:</strong> Thể tích:
-            \[
-            V = \frac13 \cdot \frac{100\sqrt3}{4} \cdot SH = \frac{25\sqrt3}{3} \cdot \frac{15}{2\sqrt3+1} \approx 48.5
-            \]
-            </div>
-            <div class="ref"><span>📄 Tham chiếu:</span> Góc giữa mặt phẳng (trang 1) – Công thức diện tích tam giác đều</div>
+            <div class="step">Gọi H là hình chiếu của S. Từ các góc suy ra khoảng cách từ H đến các cạnh. Giải ra \(SH = \frac{15}{2\sqrt3+1}\).</div>
+            <div class="step">\(V = \frac13\cdot\frac{100\sqrt3}{4}\cdot SH \approx 48.5\).</div>
+            <div class="ref"><span>📄 Tham chiếu:</span> Góc giữa mặt phẳng (trang 1) – Diện tích tam giác đều</div>
         </div>
     </div>
 
-    <!-- ==================== BÀI 9 ==================== -->
+    <!-- ========== BÀI 9 ========== -->
     <div class="problem" id="bai9">
         <h2>Bài 9. Góc giữa hai mặt phẳng (SAB) và (SCD)</h2>
-        <div class="de">
-            <strong>Đề:</strong> Hình chữ nhật \(ABCD\) có \(AD=2,\; AB=3\). \(S\) sao cho \(\triangle SDA\) và \(\triangle SCB\) vuông tại \(S\). Góc giữa \((SAB)\) và \((SCD)\) bằng \(45^\circ\). Tính thể tích.
-        </div>
+        <div class="de"><strong>Đề:</strong> Hình chữ nhật ABCD, AD=2, AB=3. S sao cho \(\triangle SDA\) và \(\triangle SCB\) vuông tại S. Góc (SAB) và (SCD) bằng 45°. Tính thể tích.</div>
         <div class="hinh"><canvas id="h9" width="300" height="220"></canvas></div>
         <div class="solution">
             <div class="warning">
-                ⚠️ <strong>Phát hiện lỗi đề bài:</strong> Không tồn tại điểm \(S\) thỏa mãn cả hai điều kiện vuông!
-                <br/><br/>
-                Giải thích: Điều kiện \(\triangle SDA\) vuông tại \(S\) nghĩa là \(S\) nằm trên mặt cầu đường kính \(AD\) (bán kính \(AD/2 = 1\)).  
-                Điều kiện \(\triangle SCB\) vuông tại \(S\) nghĩa là \(S\) nằm trên mặt cầu đường kính \(BC\) (cũng bán kính 1).  
-                Khoảng cách giữa hai tâm của các mặt cầu này bằng \(AB = 3\).  
-                Vì \(3 > 1+1\), hai mặt cầu không giao nhau. Vậy không có điểm \(S\) nào trong không gian thỏa mãn.
-                <br/><br/>
-                Kết luận: <strong>Bài toán vô nghiệm</strong> với dữ liệu đã cho. Có thể đề có sai sót (ví dụ \(AD\) phải lớn hơn).
+                ⚠️ <strong>Phát hiện lỗi đề:</strong> Không tồn tại điểm S thỏa mãn cả hai điều kiện vuông!<br/>
+                Giải thích: Điều kiện vuông nghĩa là S nằm trên mặt cầu đường kính AD và mặt cầu đường kính BC. Khoảng cách giữa hai tâm là AB = 3, trong khi tổng bán kính là 1+1=2 < 3, nên hai mặt cầu không giao nhau. Vậy bài toán vô nghiệm.
             </div>
             <div class="ref"><span>📄 Tham chiếu:</span> Mặt cầu đường kính – Góc giữa hai mặt phẳng (trang 1)</div>
         </div>
     </div>
 
-    <!-- ==================== BÀI 10 ==================== -->
+    <!-- ========== BÀI 10 ========== -->
     <div class="problem" id="bai10">
         <h2>Bài 10. Phễu nón – lộn ngược</h2>
-        <div class="de">
-            <strong>Đề:</strong> Phễu hình nón cao 15 cm. Đổ nước cao bằng \(\frac13\) chiều cao phễu. Bịt kín, lộn ngược. Tính chiều cao nước mới.
-        </div>
+        <div class="de"><strong>Đề:</strong> Phễu nón cao 15 cm. Đổ nước cao bằng 1/3 chiều cao. Bịt kín, lộn ngược. Tính chiều cao nước mới.</div>
         <div class="hinh"><canvas id="h10" width="300" height="200"></canvas></div>
         <div class="solution">
-            <div class="step"><strong>🔹 Bước 1:</strong> Gọi bán kính đáy phễu là \(R\). Khi úp xuống (đáy ở dưới), nước chiếm hình nón nhỏ phía dưới có chiều cao \(h_1=5\). Bán kính mặt nước là \(r_1 = R\cdot \frac{5}{15} = \frac{R}{3}\).  
-            Thể tích nước:
-            \[
-            V_{\text{nước}} = \frac13 \pi \left(\frac{R}{3}\right)^2 \cdot 5 = \frac{5\pi R^2}{27}
-            \]
-            </div>
-            <div class="step"><strong>🔹 Bước 2:</strong> Lộn ngược (đỉnh ở dưới), nước chiếm phần dưới (hình nón cụt). Gọi chiều cao nước là \(x\). Thể tích nước = Thể tích toàn phần – Thể tích phần không khí phía trên (hình nón nhỏ cao \(15-x\)).
-            \[
-            V_{\text{nước}} = \frac13\pi R^2\cdot 15 - \frac13\pi \left(\frac{R(15-x)}{15}\right)^2 (15-x)
-            \]
-            </div>
-            <div class="step"><strong>🔹 Bước 3:</strong> Cho bằng nhau:
-            \[
-            \frac{5\pi R^2}{27} = 5\pi R^2 - \frac{\pi R^2 (15-x)^3}{675}
-            \]
-            Chia \(\pi R^2\), nhân 675: \(125 = 3375 - (15-x)^3 \Rightarrow (15-x)^3 = 3250\).
-            </div>
-            <div class="step"><strong>🔹 Bước 4:</strong> \(15-x = \sqrt[3]{3250} \approx 14.81 \Rightarrow x \approx 0.19\) cm.</div>
-            <div class="ref"><span>📄 Tham chiếu:</span> Thể tích hình nón (trang 1) – Tam giác đồng dạng</div>
+            <div class="step">Thể tích nước ban đầu: \(V = \frac13\pi(R/3)^2\cdot5 = \frac{5\pi R^2}{27}\).</div>
+            <div class="step">Khi lộn ngược, nước chiếm phần dưới. Giải phương trình thể tích ta được chiều cao mới \(x \approx 0.19\) cm.</div>
+            <div class="ref"><span>📄 Tham chiếu:</span> Thể tích nón (trang 1) – Đồng dạng</div>
         </div>
     </div>
 
-    <!-- ==================== BÀI 11 ==================== -->
+    <!-- ========== BÀI 11 ========== -->
     <div class="problem" id="bai11">
         <h2>Bài 11. Cốc nón + viên bi</h2>
-        <div class="de">
-            <strong>Đề:</strong> Cốc nón cao 4, bán kính đáy 2. Thả viên bi bán kính 1, nước dâng phủ kín bi. Tính thể tích nước ban đầu.
-        </div>
+        <div class="de"><strong>Đề:</strong> Cốc nón cao 4, bán kính đáy 2. Thả viên bi bán kính 1, nước dâng phủ kín bi. Tính thể tích nước ban đầu.</div>
         <div class="hinh"><canvas id="h11" width="300" height="200"></canvas></div>
         <div class="solution">
-            <div class="step"><strong>🔹 Bước 1:</strong> Cốc nón đặt đáy ở dưới, đỉnh ở trên? Thường cốc là miệng rộng, đáy nhọn. Ở đây cho chiều cao 4, bán kính đáy 2. Ta hiểu đáy là miệng, đỉnh là đáy nhọn.</div>
-            <div class="step"><strong>🔹 Bước 2:</strong> Viên bi nằm trong cốc, chạm vào thành cốc. Tại vị trí tâm bi, bán kính cốc bằng bán kính bi = 1. Bán kính cốc tại độ cao \(y\) (từ đỉnh) là \(r(y) = 2 \cdot \frac{y}{4} = \frac{y}{2}\). Vậy tâm bi ở độ cao \(y=2\) (từ đỉnh).</div>
-            <div class="step"><strong>🔹 Bước 3:</strong> Nước phủ kín bi nghĩa là mặt nước nằm trên đỉnh của bi. Chiều cao cột nước từ đỉnh đến mặt nước là \(h = 2 + 1 = 3\).</div>
-            <div class="step"><strong>🔹 Bước 4:</strong> Thể tích nước + bi trong phần cốc cao 3:  
-            \(R_3 = 2\cdot \frac{3}{4} = 1.5\).  
-            \(V_{\text{nước+bi}} = \frac13 \pi (1.5)^2 \cdot 3 = 2.25\pi\).  
-            Thể tích bi \(V_{\text{bi}} = \frac43\pi\).  
-            Vậy thể tích nước:  
-            \[
-            V = 2.25\pi - \frac43\pi = \frac{11}{12}\pi \approx 2.88
-            \]
-            </div>
+            <div class="step">Tâm bi ở vị trí mà bán kính cốc bằng 1, suy ra độ cao từ đỉnh là 2. Mặt nước phủ kín bi nên chiều cao nước từ đỉnh là 3.</div>
+            <div class="step">Thể tích nước + bi trong cốc: \(\frac13\pi(1.5)^2\cdot3 = 2.25\pi\). Trừ thể tích bi \(\frac43\pi\), được \(V = \frac{11}{12}\pi \approx 2.88\).</div>
             <div class="ref"><span>📄 Tham chiếu:</span> Thể tích nón (trang 1) – Thể tích cầu (trang 1)</div>
         </div>
     </div>
 
-    <!-- ==================== BÀI 12 ==================== -->
+    <!-- ========== BÀI 12 ========== -->
     <div class="problem" id="bai12">
         <h2>Bài 12. Nón và khối trụ nội tiếp</h2>
-        <div class="de">
-            <strong>Đề:</strong> Nón có chiều cao gấp 3 bán kính. Thả trụ có chiều cao bằng đường kính đáy nón. Nước tràn ra 6. Tính diện tích xung quanh nón.
-        </div>
+        <div class="de"><strong>Đề:</strong> Nón có chiều cao gấp 3 bán kính. Thả trụ có chiều cao bằng đường kính đáy nón. Nước tràn ra 6. Tính diện tích xung quanh nón.</div>
         <div class="hinh"><canvas id="h12" width="300" height="200"></canvas></div>
         <div class="solution">
-            <div class="step"><strong>🔹 Bước 1:</strong> Gọi bán kính nón là \(R\), chiều cao \(H=3R\). Trụ có chiều cao \(h=2R\). Trụ nằm trên đáy, nên đỉnh trụ ở độ cao \(2R\). Bán kính trụ \(r = R\left(1 - \frac{2R}{3R}\right) = \frac{R}{3}\).</div>
-            <div class="step"><strong>🔹 Bước 2:</strong> Thể tích trụ:  
-            \(V_{\text{trụ}} = \pi r^2 h = \pi \left(\frac{R}{3}\right)^2 (2R) = \frac{2\pi R^3}{9}\).  
-            Nước tràn ra chính bằng thể tích trụ: \(\frac{2\pi R^3}{9} = 6 \Rightarrow R^3 = \frac{27}{\pi}\).</div>
-            <div class="step"><strong>🔹 Bước 3:</strong> Đường sinh \(l = \sqrt{R^2 + H^2} = \sqrt{R^2 + 9R^2} = R\sqrt{10}\).  
-            Diện tích xung quanh nón:
-            \[
-            S_{xq} = \pi R l = \pi R^2 \sqrt{10}
-            \]
-            Với \(R^2 = \left(\frac{27}{\pi}\right)^{2/3} = \frac{9}{\pi^{2/3}}\), ta có:
-            \[
-            S_{xq} = \pi \sqrt{10} \cdot \frac{9}{\pi^{2/3}} = 9\sqrt{10}\,\pi^{1/3} \approx 41.7
-            \]
-            </div>
+            <div class="step">Gọi R bán kính nón. Trụ có chiều cao 2R, bán kính R/3. Thể tích trụ = \(\frac{2\pi R^3}{9} = 6 \Rightarrow R^3 = \frac{27}{\pi}\).</div>
+            <div class="step">\(S_{xq} = \pi R\sqrt{R^2+9R^2} = \pi R^2\sqrt{10} = 9\sqrt{10}\,\pi^{1/3} \approx 41.7\).</div>
             <div class="ref"><span>📄 Tham chiếu:</span> Hình nón, hình trụ (trang 1)</div>
         </div>
     </div>
 
-    <!-- ==================== BÀI 13 ==================== -->
+    <!-- ========== BÀI 13 ========== -->
     <div class="problem" id="bai13">
         <h2>Bài 13. Nón trong trụ – nước dâng</h2>
-        <div class="de">
-            <strong>Đề:</strong> Nón cao 12, đáy nón có đường kính bằng bán kính đáy trụ. Trụ đổ nước cao 12. Lấy nón ra, tính chiều cao nước còn lại.
-        </div>
+        <div class="de"><strong>Đề:</strong> Nón cao 12, đáy nón có đường kính bằng bán kính đáy trụ. Trụ đổ nước cao 12. Lấy nón ra, tính chiều cao nước còn lại.</div>
         <div class="hinh"><canvas id="h13" width="300" height="200"></canvas></div>
         <div class="solution">
-            <div class="step"><strong>🔹 Bước 1:</strong> Gọi bán kính đáy trụ là \(R\). Nón có bán kính \(r = \frac{R}{2}\), chiều cao \(h=12\).</div>
-            <div class="step"><strong>🔹 Bước 2:</strong> Thể tích nước trong trụ khi có nón:
-            \[
-            V_{\text{nước}} = V_{\text{trụ}} - V_{\text{nón}} = \pi R^2\cdot 12 - \frac13\pi \left(\frac{R}{2}\right)^2\cdot 12 = 12\pi R^2 - \pi R^2 = 11\pi R^2
-            \]
-            </div>
-            <div class="step"><strong>🔹 Bước 3:</strong> Sau khi lấy nón ra, nước vẫn giữ nguyên thể tích, có dạng hình trụ chiều cao \(h'\):
-            \[
-            \pi R^2 h' = 11\pi R^2 \Rightarrow h' = 11
-            \]
-            </div>
+            <div class="step">Gọi R bán kính trụ, nón có bán kính R/2. Thể tích nước khi có nón: \(12\pi R^2 - \frac13\pi(R/2)^2\cdot12 = 11\pi R^2\).</div>
+            <div class="step">Sau khi lấy nón ra, nước có chiều cao \(h'\): \(\pi R^2 h' = 11\pi R^2 \Rightarrow h' = 11\).</div>
             <div class="ref"><span>📄 Tham chiếu:</span> Thể tích trụ, nón (trang 1)</div>
         </div>
     </div>
 
-    <!-- ==================== BÀI 14 ==================== -->
+    <!-- ========== BÀI 14 (Cập nhật theo hình ảnh) ========== -->
     <div class="problem" id="bai14">
         <h2>Bài 14. Lon trụ và cốc nón cụt</h2>
         <div class="de">
-            <strong>Đề:</strong> Lon nước ngọt hình trụ, cốc nước hình nón cụt. Đổ nước từ lon ra cốc sao cho chiều cao nước trong hai vật bằng nhau. Tính chiều cao đó.
+            <strong>Đề:</strong> Lon nước ngọt hình trụ (đường kính đáy 8 cm, chiều cao 15 cm). Cốc nước hình nón cụt (đường kính đáy nhỏ 4 cm, đáy lớn 6 cm, chiều cao 15 cm). Đổ một lượng nước từ lon sang cốc sao cho chiều cao nước trong lon và cốc bằng nhau. Tính chiều cao \(h\) đó.
         </div>
-        <div class="hinh"><canvas id="h14" width="300" height="200"></canvas></div>
+        <div class="hinh"><canvas id="h14" width="300" height="220"></canvas></div>
         <div class="solution">
-            <div class="step">Bài toán này <strong>thiếu dữ liệu kích thước</strong> của lon trụ và cốc nón cụt (bán kính các đáy, chiều cao cốc).</div>
-            <div class="step">Giả sử lon trụ có bán kính \(R\), cốc nón cụt có bán kính đáy nhỏ \(r_1\), đáy lớn \(r_2\), chiều cao \(H\).</div>
-            <div class="step">Khi chiều cao nước là \(h\), thể tích nước trong lon: \(V_1 = \pi R^2 h\).</div>
-            <div class="step">Thể tích nước trong cốc (nón cụt chiều cao \(h\)):  
-            \[
-            V_2 = \frac13\pi h \left(r_1^2 + r_2^2 + r_1 r_2\right)
-            \]
-            (Giả sử \(r_2\) là bán kính tại miệng và không đổi theo chiều cao, hoặc nếu cốc có dạng nón cụt chuẩn thì bán kính thay đổi tuyến tính. Thực tế phải biết góc nghiêng.)
+            <div class="step"><strong>🔹 Dữ liệu:</strong> Lon: bán kính \(R=4\) cm, chiều cao \(H=15\) cm.<br>
+            Cốc: bán kính đáy nhỏ \(r=2\) cm, bán kính đáy lớn \(R_c=3\) cm, chiều cao 15 cm.
             </div>
-            <div class="step">Cho \(V_1 = V_2\) và giải tìm \(h\). Nếu \(h>0\), phương trình trở thành:
+            <div class="step"><strong>🔹 Gọi \(h\) là chiều cao nước trong cả lon và cốc.</strong><br>
+            Thể tích nước còn lại trong lon: \(V_{\text{lon}} = \pi R^2 h = 16\pi h\).<br>
+            Thể tích nước trong cốc (nón cụt cao h): 
             \[
-            \pi R^2 = \frac13\pi (r_1^2 + r_2^2 + r_1 r_2)
+            V_{\text{cốc}} = \frac{\pi h}{3}\left(r^2 + r\cdot r_h + r_h^2\right)
             \]
-            Nếu đẳng thức này đúng thì mọi \(h\) đều thỏa mãn; nếu không, vô nghiệm.</div>
-            <div class="ref"><span>📄 Tham chiếu:</span> Thể tích trụ, nón cụt (trang 1)</div>
+            với \(r_h = r + \frac{R_c - r}{15}h = 2 + \frac{h}{15}\).
+            </div>
+            <div class="step"><strong>🔹 Bảo toàn thể tích:</strong> Tổng nước ban đầu bằng thể tích lon đầy: \(\pi R^2 H = 240\pi\).<br>
+            Phương trình:
+            \[
+            240\pi = 16\pi h + \frac{\pi h}{3}\left(4 + 2\left(2+\frac{h}{15}\right) + \left(2+\frac{h}{15}\right)^2\right)
+            \]
+            Chia \(\pi\), nhân 675, thu được:
+            \[
+            h^3 + 90h^2 + 13500h - 162000 = 0
+            \]
+            </div>
+            <div class="step"><strong>🔹 Giải phương trình:</strong> Nghiệm dương duy nhất \(h \approx 11.07\) cm.</div>
+            <div class="ref"><span>📄 Tham chiếu:</span> Thể tích trụ, nón cụt (trang 1) – Bảo toàn thể tích</div>
         </div>
     </div>
 
-    <!-- ==================== BÀI 15 ==================== -->
+    <!-- ========== BÀI 15 ========== -->
     <div class="problem" id="bai15">
-        <h2>Bài 15. Hạt cườm – elip xoay và khoan lỗ</h2>
-        <div class="de">
-            <strong>Đề:</strong> Elip \(\frac{x^2}{1.5^2} + y^2 = 1\) quay quanh Ox. Khoan lỗ trụ bán kính 0.2 dọc trục. Tính thể tích phần còn lại.
-        </div>
+        <h2>Bài 15. Hạt cườm – elip xoay</h2>
+        <div class="de"><strong>Đề:</strong> Elip \(\frac{x^2}{1.5^2}+y^2=1\) quay quanh Ox, khoan lỗ trụ bán kính 0.2. Tính thể tích phần còn lại.</div>
         <div class="hinh"><canvas id="h15" width="300" height="200"></canvas></div>
         <div class="solution">
-            <div class="step"><strong>🔹 Bước 1:</strong> Thể tích vật thể tròn xoay (công thức trang 2):
-            \[
-            V_{\text{elip}} = \int_{-1.5}^{1.5} \pi y^2 dx = \int_{-1.5}^{1.5} \pi \left(1 - \frac{x^2}{2.25}\right) dx
-            \]
-            \[
-            = \pi \left[ x - \frac{x^3}{6.75} \right]_{-1.5}^{1.5} = \pi (3 - 1.5) = 1.5\pi
-            \]
-            </div>
-            <div class="step"><strong>🔹 Bước 2:</strong> Thể tích lỗ khoan hình trụ bán kính 0.2, chiều dài 3 (từ -1.5 đến 1.5):
-            \[
-            V_{\text{lỗ}} = \pi (0.2)^2 \cdot 3 = 0.12\pi
-            \]
-            </div>
-            <div class="step"><strong>🔹 Bước 3:</strong> Thể tích hạt cườm:
-            \[
-            V = 1.5\pi - 0.12\pi = 1.38\pi \approx 4.335 \text{ cm}^3
-            \]
-            </div>
-            <div class="ref"><span>📄 Tham chiếu:</span> Thể tích tròn xoay – Tích phân (trang 2)</div>
+            <div class="step">Thể tích elip xoay: \(V_0 = \int_{-1.5}^{1.5}\pi(1-x^2/2.25)dx = 1.5\pi\).</div>
+            <div class="step">Thể tích lỗ trụ: \(V_{\text{lỗ}} = \pi(0.2)^2\cdot3 = 0.12\pi\).</div>
+            <div class="step">Thể tích hạt: \(V = 1.5\pi - 0.12\pi = 1.38\pi \approx 4.335\) cm³.</div>
+            <div class="ref"><span>📄 Tham chiếu:</span> Thể tích tròn xoay (trang 2)</div>
         </div>
     </div>
 
-    <!-- ==================== BÀI 16 ==================== -->
+    <!-- ========== BÀI 16 ========== -->
     <div class="problem" id="bai16">
-        <h2>Bài 16. Con kiến bò trên hình hộp</h2>
-        <div class="de">
-            <strong>Đề:</strong> Hình hộp chữ nhật 30×50×60. Kiến bò từ A đến C' (đỉnh đối diện). Tìm đường đi ngắn nhất trên bề mặt.
-        </div>
+        <h2>Bài 16. Kiến bò trên hình hộp</h2>
+        <div class="de"><strong>Đề:</strong> Hộp 30×50×60 cm. Kiến bò từ A đến C' (đỉnh đối diện). Tìm đường đi ngắn nhất trên bề mặt.</div>
         <div class="hinh"><canvas id="h16" width="300" height="200"></canvas></div>
         <div class="solution">
-            <div class="step">Trải phẳng các mặt của hình hộp. Có 3 cách trải tương ứng với 3 cặp kích thước:</div>
-            <div class="step">1. Trải cạnh 30 và 50, chừa 60: \(d_1 = \sqrt{(30+50)^2 + 60^2} = \sqrt{6400+3600} = 100\).</div>
-            <div class="step">2. Trải cạnh 30 và 60, chừa 50: \(d_2 = \sqrt{(30+60)^2 + 50^2} = \sqrt{8100+2500} \approx 102.96\).</div>
-            <div class="step">3. Trải cạnh 50 và 60, chừa 30: \(d_3 = \sqrt{(50+60)^2 + 30^2} = \sqrt{12100+900} \approx 114.02\).</div>
-            <div class="step"><strong>✅ Kết luận:</strong> Đường đi ngắn nhất dài \(100\) cm.</div>
-            <div class="ref"><span>📄 Tham chiếu:</span> Phương pháp trải phẳng hình hộp</div>
+            <div class="step">Trải phẳng các mặt, có 3 cách:
+            \[
+            d_1 = \sqrt{(30+50)^2+60^2} = 100,\quad
+            d_2 = \sqrt{(30+60)^2+50^2} \approx 102.96,\quad
+            d_3 = \sqrt{(50+60)^2+30^2} \approx 114.02.
+            \]
+            </div>
+            <div class="step">Vậy đường ngắn nhất dài 100 cm.</div>
+            <div class="ref"><span>📄 Tham chiếu:</span> Phương pháp trải phẳng</div>
         </div>
     </div>
 
-    <!-- ==================== BÀI 17 ==================== -->
+    <!-- ========== BÀI 17 ========== -->
     <div class="problem" id="bai17">
         <h2>Bài 17. Kiến bò quanh hình trụ</h2>
-        <div class="de">
-            <strong>Đề:</strong> Hình trụ bán kính \(R=3\), cao \(h=4\). Kiến bò sao cho đường đi cắt tất cả đường sinh. Hỏi ngắn nhất bao nhiêu vòng?
-        </div>
+        <div class="de"><strong>Đề:</strong> Hình trụ R=3, h=4. Kiến bò ngắn nhất để cắt tất cả đường sinh.</div>
         <div class="hinh"><canvas id="h17" width="300" height="200"></canvas></div>
         <div class="solution">
-            <div class="step">Để cắt tất cả đường sinh, kiến phải đi bao quanh chu vi ít nhất 1 vòng.</div>
-            <div class="step">Trải mặt xung quanh thành hình chữ nhật: chiều rộng là chu vi \(C=2\pi R=6\pi\), chiều cao là \(h=4\).</div>
-            <div class="step">Quãng đường ngắn nhất đi từ đáy dưới lên đáy trên trong hình chữ nhật này là đường chéo:
-            \[
-            L = \sqrt{(6\pi)^2 + 4^2} = \sqrt{36\pi^2 + 16} \approx 19.48
-            \]
-            </div>
-            <div class="step">Số vòng tối thiểu là <strong>1</strong> (vì chỉ cần đi đúng 1 chu vi để cắt hết đường sinh).</div>
+            <div class="step">Trải mặt xung quanh thành hình chữ nhật: chiều rộng \(2\pi R = 6\pi\), chiều cao 4.</div>
+            <div class="step">Đường đi ngắn nhất là đường chéo: \(L = \sqrt{(6\pi)^2+4^2} \approx 19.48\). Số vòng tối thiểu là 1.</div>
             <div class="ref"><span>📄 Tham chiếu:</span> Khai triển hình trụ</div>
         </div>
     </div>
 
-    <!-- ==================== BÀI 18 ==================== -->
+    <!-- ========== BÀI 18 ========== -->
     <div class="problem" id="bai18">
         <h2>Bài 18. (Chưa có dữ liệu)</h2>
-        <div class="de">
-            <strong>Thông báo:</strong> Trong file PDF, bài 18 không có nội dung cụ thể.
-        </div>
+        <div class="de"><strong>Thông báo:</strong> Trong file PDF, bài 18 không có nội dung cụ thể.</div>
         <div class="hinh"><canvas id="h18" width="300" height="180"></canvas></div>
         <div class="solution">
             <div class="step">Vui lòng bổ sung đề bài để có lời giải chi tiết.</div>
@@ -650,82 +394,67 @@
 
 <!-- ==================== JAVASCRIPT VẼ HÌNH ==================== -->
 <script>
-    // Hàm vẽ tứ diện
+    // Các hàm vẽ hình (giữ nguyên như trước)
     function drawTuDien(ctx, w, h) {
         ctx.clearRect(0, 0, w, h);
         ctx.strokeStyle = '#1e3a5f';
         ctx.lineWidth = 2;
-        // Đáy BCD
         ctx.beginPath();
         ctx.moveTo(50, 170);
         ctx.lineTo(230, 180);
         ctx.lineTo(140, 110);
         ctx.closePath();
         ctx.stroke();
-        // Đỉnh A
-        const ax = 140,
-            ay = 40;
+        const ax = 140, ay = 40;
         ctx.beginPath();
-        ctx.arc(ax, ay, 5, 0, 2 * Math.PI);
+        ctx.arc(ax, ay, 5, 0, 2*Math.PI);
         ctx.fillStyle = '#b91c1c';
         ctx.fill();
-        // Cạnh bên
         ctx.beginPath();
-        ctx.moveTo(50, 170);
-        ctx.lineTo(ax, ay);
-        ctx.moveTo(230, 180);
-        ctx.lineTo(ax, ay);
-        ctx.moveTo(140, 110);
-        ctx.lineTo(ax, ay);
+        ctx.moveTo(50, 170); ctx.lineTo(ax, ay);
+        ctx.moveTo(230, 180); ctx.lineTo(ax, ay);
+        ctx.moveTo(140, 110); ctx.lineTo(ax, ay);
         ctx.stroke();
         ctx.fillStyle = '#0f172a';
         ctx.font = 'bold 14px sans-serif';
-        ctx.fillText('A', ax - 15, ay - 10);
+        ctx.fillText('A', ax-15, ay-10);
         ctx.fillText('B', 25, 180);
         ctx.fillText('C', 235, 195);
         ctx.fillText('D', 130, 100);
     }
-
     function drawHinhChop(ctx, w, h) {
         ctx.clearRect(0, 0, w, h);
         ctx.strokeStyle = '#1e3a5f';
         ctx.lineWidth = 2;
-        // Đáy
         ctx.beginPath();
         ctx.moveTo(50, 160);
         ctx.lineTo(220, 170);
         ctx.lineTo(140, 100);
         ctx.closePath();
         ctx.stroke();
-        const sx = 140,
-            sy = 35;
+        const sx = 140, sy = 35;
         ctx.beginPath();
-        ctx.arc(sx, sy, 5, 0, 2 * Math.PI);
+        ctx.arc(sx, sy, 5, 0, 2*Math.PI);
         ctx.fillStyle = '#b91c1c';
         ctx.fill();
         ctx.beginPath();
-        ctx.moveTo(50, 160);
-        ctx.lineTo(sx, sy);
-        ctx.moveTo(220, 170);
-        ctx.lineTo(sx, sy);
-        ctx.moveTo(140, 100);
-        ctx.lineTo(sx, sy);
+        ctx.moveTo(50, 160); ctx.lineTo(sx, sy);
+        ctx.moveTo(220, 170); ctx.lineTo(sx, sy);
+        ctx.moveTo(140, 100); ctx.lineTo(sx, sy);
         ctx.stroke();
         ctx.fillStyle = '#0f172a';
         ctx.font = 'bold 14px sans-serif';
-        ctx.fillText('S', sx - 15, sy - 10);
+        ctx.fillText('S', sx-15, sy-10);
         ctx.fillText('A', 25, 170);
         ctx.fillText('B', 225, 185);
         ctx.fillText('C', 130, 90);
     }
-
     function drawNon(ctx, w, h) {
         ctx.clearRect(0, 0, w, h);
         ctx.strokeStyle = '#1e3a5f';
         ctx.lineWidth = 2;
-        // Đáy
         ctx.beginPath();
-        ctx.ellipse(150, 160, 80, 18, 0, 0, 2 * Math.PI);
+        ctx.ellipse(150, 160, 80, 18, 0, 0, 2*Math.PI);
         ctx.stroke();
         ctx.beginPath();
         ctx.moveTo(70, 160);
@@ -738,46 +467,34 @@
         ctx.fillText('Đỉnh', 135, 25);
         ctx.fillText('Đáy', 140, 185);
     }
-
     function drawTru(ctx, w, h) {
         ctx.clearRect(0, 0, w, h);
         ctx.strokeStyle = '#1e3a5f';
         ctx.lineWidth = 2;
         ctx.beginPath();
-        ctx.ellipse(150, 160, 70, 18, 0, 0, 2 * Math.PI);
+        ctx.ellipse(150, 160, 70, 18, 0, 0, 2*Math.PI);
         ctx.stroke();
         ctx.beginPath();
-        ctx.ellipse(150, 40, 70, 18, 0, 0, 2 * Math.PI);
+        ctx.ellipse(150, 40, 70, 18, 0, 0, 2*Math.PI);
         ctx.stroke();
         ctx.beginPath();
-        ctx.moveTo(80, 40);
-        ctx.lineTo(80, 160);
-        ctx.moveTo(220, 40);
-        ctx.lineTo(220, 160);
+        ctx.moveTo(80, 40); ctx.lineTo(80, 160);
+        ctx.moveTo(220, 40); ctx.lineTo(220, 160);
         ctx.stroke();
         ctx.fillStyle = '#0f172a';
         ctx.font = 'bold 14px sans-serif';
         ctx.fillText('Hình trụ', 140, 95);
     }
-
     function drawHinhHop(ctx, w, h) {
         ctx.clearRect(0, 0, w, h);
         ctx.strokeStyle = '#1e3a5f';
         ctx.lineWidth = 2;
         ctx.strokeRect(60, 80, 160, 100);
         ctx.beginPath();
-        ctx.moveTo(60, 80);
-        ctx.lineTo(110, 35);
-        ctx.lineTo(270, 35);
-        ctx.lineTo(220, 80);
-        ctx.closePath();
+        ctx.moveTo(60, 80); ctx.lineTo(110, 35); ctx.lineTo(270, 35); ctx.lineTo(220, 80); ctx.closePath();
         ctx.stroke();
         ctx.beginPath();
-        ctx.moveTo(220, 80);
-        ctx.lineTo(270, 35);
-        ctx.lineTo(270, 135);
-        ctx.lineTo(220, 180);
-        ctx.closePath();
+        ctx.moveTo(220, 80); ctx.lineTo(270, 35); ctx.lineTo(270, 135); ctx.lineTo(220, 180); ctx.closePath();
         ctx.stroke();
         ctx.fillStyle = '#0f172a';
         ctx.font = 'bold 12px sans-serif';
@@ -787,21 +504,48 @@
         ctx.fillText('D', 115, 30);
         ctx.fillText('C\'', 265, 50);
     }
-
     function drawElip(ctx, w, h) {
         ctx.clearRect(0, 0, w, h);
         ctx.strokeStyle = '#1e3a5f';
         ctx.lineWidth = 2;
         ctx.beginPath();
-        ctx.ellipse(150, 100, 90, 60, 0, 0, 2 * Math.PI);
+        ctx.ellipse(150, 100, 90, 60, 0, 0, 2*Math.PI);
         ctx.stroke();
         ctx.fillStyle = '#0f172a';
         ctx.font = '14px sans-serif';
         ctx.fillText('Elip xoay quanh Ox', 110, 115);
         ctx.fillText('(hạt cườm)', 130, 135);
     }
+    function drawNonCum(ctx, w, h) {
+        // Vẽ nón cụt cho bài 14
+        ctx.clearRect(0, 0, w, h);
+        ctx.strokeStyle = '#1e3a5f';
+        ctx.lineWidth = 2;
+        // đáy dưới (đáy nhỏ)
+        ctx.beginPath();
+        ctx.ellipse(150, 170, 40, 12, 0, 0, 2*Math.PI);
+        ctx.stroke();
+        // đáy trên (đáy lớn)
+        ctx.beginPath();
+        ctx.ellipse(150, 50, 60, 16, 0, 0, 2*Math.PI);
+        ctx.stroke();
+        // hai cạnh bên
+        ctx.beginPath();
+        ctx.moveTo(110, 50);
+        ctx.lineTo(90, 170);
+        ctx.moveTo(190, 50);
+        ctx.lineTo(210, 170);
+        ctx.stroke();
+        ctx.fillStyle = '#0f172a';
+        ctx.font = 'bold 14px sans-serif';
+        ctx.fillText('Cốc nón cụt', 120, 30);
+        ctx.fillText('6cm', 190, 45);
+        ctx.fillText('4cm', 115, 180);
+        ctx.fillText('15cm', 240, 110);
+        ctx.fillText('h', 130, 110);
+    }
 
-    // Gán các hàm vẽ cho từng canvas
+    // Gán các hàm vẽ
     window.onload = function() {
         const list = [
             ['h1', drawTuDien],
@@ -816,21 +560,19 @@
             ['h10', drawNon],
             ['h11', drawNon],
             ['h12', drawNon],
-            ['h13', (ctx, w, h) => { drawTru(ctx, w, h); drawNon(ctx, w, h); }],
-            ['h14', (ctx, w, h) => { drawTru(ctx, w, h); drawNon(ctx, w, h); }],
+            ['h13', (ctx,w,h)=>{ drawTru(ctx,w,h); drawNon(ctx,w,h); }],
+            ['h14', drawNonCum],
             ['h15', drawElip],
             ['h16', drawHinhHop],
             ['h17', drawTru],
-            ['h18', (ctx, w, h) => { ctx.fillStyle = '#6b7a8f'; ctx.font = '18px sans-serif'; ctx.fillText('❌ Thiếu đề', 100, 100); }]
+            ['h18', (ctx,w,h)=>{ ctx.fillStyle='#6b7a8f'; ctx.font='18px sans-serif'; ctx.fillText('❌ Thiếu đề',100,100); }]
         ];
         list.forEach(([id, fn]) => {
             const canvas = document.getElementById(id);
             if (canvas) {
-                const rect = canvas.getBoundingClientRect();
                 fn(canvas.getContext('2d'), canvas.width, canvas.height);
             }
         });
-        // Re-render MathJax
         if (window.MathJax) MathJax.typesetPromise();
     };
 </script>
