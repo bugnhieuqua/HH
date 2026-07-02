@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>18 bài tập Hình học không gian – Có lời giải chi tiết</title>
-  <!-- MathJax -->
+  <title>Giải chi tiết 18 bài tập Hình học không gian</title>
   <script>
     MathJax = {
       tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
@@ -14,34 +13,36 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', Roboto, system-ui, sans-serif; background: #f0f4f8; padding: 24px; color: #0b1e33; }
+    body { font-family: 'Segoe UI', Roboto, sans-serif; background: #f0f4f8; padding: 24px; color: #0b1e33; }
     .container { max-width: 1200px; margin: 0 auto; }
-    header { background: linear-gradient(145deg, #0b2a44, #1e4a76); color: white; padding: 28px 24px; border-radius: 20px; margin-bottom: 36px; }
-    header h1 { font-size: 32px; }
-    header p { opacity: 0.85; font-size: 18px; margin-top: 8px; }
+    header { background: linear-gradient(145deg, #0b2a44, #1e4a76); color: white; padding: 28px 24px; border-radius: 20px; margin-bottom: 36px; box-shadow: 0 12px 24px rgba(0,20,40,0.25); }
+    header h1 { font-size: 32px; font-weight: 700; display: flex; align-items: center; gap: 12px; }
+    header p { margin-top: 8px; opacity: 0.85; font-size: 18px; }
     .problem { background: white; border-radius: 20px; padding: 28px 30px; margin-bottom: 40px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); border-left: 8px solid #1e4a76; }
-    .problem h2 { font-size: 24px; color: #0b2a44; border-bottom: 2px dashed #d1d9e6; padding-bottom: 10px; margin-bottom: 14px; }
-    .problem .de { background: #f1f6fa; padding: 16px 20px; border-radius: 12px; margin: 12px 0 18px 0; border-left: 4px solid #3b82f6; line-height: 1.6; }
+    .problem:hover { border-left-color: #f59e0b; }
+    .problem h2 { font-size: 24px; color: #0b2a44; border-bottom: 2px dashed #d1d9e6; padding-bottom: 10px; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .problem .de { background: #f1f6fa; padding: 16px 20px; border-radius: 12px; margin: 12px 0 18px 0; font-size: 16px; border-left: 4px solid #3b82f6; line-height: 1.6; }
+    .problem .de strong { color: #b91c1c; }
     .hinh { text-align: center; margin: 18px 0; }
-    .hinh canvas { border: 1px solid #cbd5e1; border-radius: 16px; background: white; max-width: 100%; }
-    .solution { background: #fafcff; padding: 20px 24px; border-radius: 14px; border: 1px solid #e9edf4; margin-top: 16px; }
+    .hinh canvas { border: 1px solid #cbd5e1; border-radius: 16px; background: #ffffff; max-width: 100%; box-shadow: 0 4px 8px rgba(0,0,0,0.04); }
+    .solution { background: #fafcff; padding: 20px 24px; border-radius: 14px; margin-top: 16px; border: 1px solid #e9edf4; }
     .solution .step { margin: 10px 0; line-height: 1.7; }
+    .solution .formula-box { background: #e6f0fa; padding: 10px 16px; border-radius: 10px; font-family: 'Courier New', monospace; margin: 8px 0; overflow-x: auto; border: 1px solid #bdd3e8; }
     .solution .ref { text-align: right; font-style: italic; color: #475569; font-size: 14px; margin-top: 18px; padding-top: 10px; border-top: 1px solid #dce3ec; }
     .solution .ref span { background: #dbeafe; padding: 2px 12px; border-radius: 30px; font-weight: 600; color: #1e3a8a; }
     .warning { background: #fef2f2; border-left: 6px solid #dc2626; padding: 14px 18px; border-radius: 10px; color: #7f1d1d; margin: 12px 0; }
-    .footer { text-align: center; padding: 28px 0 10px; color: #6b7a8f; border-top: 1px solid #dce3ec; }
-    .formula-box { background: #e6f0fa; padding: 8px 14px; border-radius: 8px; display: inline-block; border: 1px solid #bdd3e8; margin: 4px 0; font-family: 'Courier New', monospace; }
-    @media (max-width: 650px) { .problem { padding: 18px 16px; } header h1 { font-size: 24px; } }
+    .footer { text-align: center; padding: 28px 0 10px; color: #6b7a8f; font-size: 15px; border-top: 1px solid #dce3ec; }
+    @media (max-width: 650px) { .problem { padding: 18px 16px; } header h1 { font-size: 24px; flex-wrap: wrap; } }
   </style>
 </head>
 <body>
 <div class="container">
   <header>
     <h1>📐 18 Bài tập Hình học không gian</h1>
-    <p>Lời giải chi tiết, công thức, tham chiếu trang và hình vẽ minh họa</p>
+    <p>Lời giải chi tiết, công thức đầy đủ, tham chiếu trang và hình vẽ minh họa</p>
   </header>
 
-  <!-- ========== BÀI 1 ========== -->
+  <!-- ==================== BÀI 1 ==================== -->
   <div class="problem" id="bai1">
     <h2>Bài 1. Thể tích &amp; bán kính mặt cầu ngoại tiếp tứ diện</h2>
     <div class="de"><strong>Đề:</strong> \(BC=CD=4,\ DB=5,\ AB=AD=7,\ AC=6\).</div>
@@ -57,7 +58,7 @@
     </div>
   </div>
 
-  <!-- ========== BÀI 2 ========== -->
+  <!-- ==================== BÀI 2 ==================== -->
   <div class="problem" id="bai2">
     <h2>Bài 2. Thể tích hình chóp S.ABC</h2>
     <div class="de"><strong>Đề:</strong> \(AB=2,\ AC=3,\ \angle BAC=50^\circ,\ SA=2,\ SB=2,\ SC=3\).</div>
@@ -69,7 +70,7 @@
     </div>
   </div>
 
-  <!-- ========== BÀI 3 ========== -->
+  <!-- ==================== BÀI 3 ==================== -->
   <div class="problem" id="bai3">
     <h2>Bài 3. Thể tích hình chóp S.ABCD (đáy hình bình hành)</h2>
     <div class="de"><strong>Đề:</strong> \(SA=2AB=AC=4,\ \widehat{SAB}=\widehat{SAC}=50^\circ,\ \widehat{BAC}=70^\circ\).</div>
@@ -82,7 +83,7 @@
     </div>
   </div>
 
-  <!-- ========== BÀI 4 ========== -->
+  <!-- ==================== BÀI 4 ==================== -->
   <div class="problem" id="bai4">
     <h2>Bài 4. Hình chóp đều + mặt phẳng cắt</h2>
     <div class="de"><strong>Đề:</strong> Đáy ABC đều cạnh 3, \(SA\perp(ABC)\), góc giữa SC và đáy là 60°. P, Q trọng tâm SAB, SAC. D đối xứng A qua B. Mặt phẳng (DPQ) chia khối chóp, tính \(V_1\) (phần chứa S).</div>
@@ -94,7 +95,7 @@
     </div>
   </div>
 
-  <!-- ========== BÀI 5 ========== -->
+  <!-- ==================== BÀI 5 ==================== -->
   <div class="problem" id="bai5">
     <h2>Bài 5. Tứ diện với trọng tâm</h2>
     <div class="de"><strong>Đề:</strong> \(\triangle BCD\) có \(BD=6,\ BC=8,\ CD=9\). G trọng tâm, \(AG\perp(BCD), AG=6\).</div>
@@ -108,7 +109,7 @@
     </div>
   </div>
 
-  <!-- ========== BÀI 6 ========== -->
+  <!-- ==================== BÀI 6 ==================== -->
   <div class="problem" id="bai6">
     <h2>Bài 6. Hình chóp với trung điểm và giao điểm</h2>
     <div class="de"><strong>Đề:</strong> \(AB=5.2,\ BC=7.4,\ CA=6.9\). M trung điểm BC, N trên AC sao cho AC=3AN. I=AM∩BN, SI⊥(ABC), SI=6. Tính SA, SB, SC, BK, R.</div>
@@ -120,7 +121,7 @@
     </div>
   </div>
 
-  <!-- ========== BÀI 7 ========== -->
+  <!-- ==================== BÀI 7 ==================== -->
   <div class="problem" id="bai7">
     <h2>Bài 7. Hình hộp chữ nhật và trọng tâm</h2>
     <div class="de"><strong>Đề:</strong> \(AB=2a,\ AD=a,\ AA'=2a\). G là trọng tâm \(\triangle A'B'C\). Tính \(V_{G.ABCD}\) và \(P=m^2+n\).</div>
@@ -133,7 +134,7 @@
     </div>
   </div>
 
-  <!-- ========== BÀI 8 ========== -->
+  <!-- ==================== BÀI 8 ==================== -->
   <div class="problem" id="bai8">
     <h2>Bài 8. Góc giữa các mặt bên và đáy</h2>
     <div class="de"><strong>Đề:</strong> Đáy ABC đều cạnh 10. Góc giữa (SAB),(SAC),(SBC) với đáy lần lượt là 45°, 45°, 60°.</div>
@@ -145,47 +146,26 @@
     </div>
   </div>
 
-  <!-- ========== BÀI 9 (CẬP NHẬT - VÔ NGHIỆM) ========== -->
+  <!-- ==================== BÀI 9 ==================== -->
   <div class="problem" id="bai9">
     <h2>Bài 9. Thể tích hình chóp S.ABCD – VÔ NGHIỆM</h2>
-    <div class="de">
-      <strong>Đề:</strong> Hình chữ nhật \(ABCD\) có \(AD = 2,\; AB = 3\). Điểm \(S\) trong không gian sao cho \(\triangle SDA\) và \(\triangle SCB\) vuông tại \(S\). Góc giữa hai mặt phẳng \((SAB)\) và \((SCD)\) bằng \(45^\circ\). Tính thể tích.
-    </div>
+    <div class="de"><strong>Đề:</strong> Hình chữ nhật \(ABCD\) có \(AD = 2,\; AB = 3\). Điểm \(S\) sao cho \(\triangle SDA\) và \(\triangle SCB\) vuông tại \(S\). Góc \((SAB)\) và \((SCD)\) bằng \(45^\circ\). Tính thể tích.</div>
     <div class="hinh"><canvas id="h9" width="700" height="380"></canvas></div>
     <div class="solution">
-      <div class="warning">
-        ⚠️ <strong>KẾT LUẬN:</strong> Với dữ liệu \(AD=2,\; AB=3\), bài toán <strong>VÔ NGHIỆM</strong> – không tồn tại điểm \(S\).
-      </div>
-      <div class="step"><strong>✏️ Giải thích chi tiết:</strong></div>
-      <div class="step">
-        <strong>1. Điều kiện từ hai tam giác vuông:</strong><br>
-        - \(\triangle SDA\) vuông tại \(S\) ⇒ \(S\) nằm trên mặt cầu đường kính \(AD\), tâm \(M\) là trung điểm \(AD\), bán kính \(R_1 = AD/2 = 1\).<br>
-        - \(\triangle SCB\) vuông tại \(S\) ⇒ \(S\) nằm trên mặt cầu đường kính \(BC\) (vì \(BC=AD=2\)), tâm \(N\) là trung điểm \(BC\), bán kính \(R_2 = BC/2 = 1\).
-      </div>
-      <div class="step">
-        <strong>2. Khoảng cách giữa hai tâm:</strong><br>
-        Trong hình chữ nhật \(ABCD\), \(MN = AB = 3\).
-      </div>
-      <div class="step">
-        <strong>3. Điều kiện để hai mặt cầu có điểm chung:</strong><br>
-        Hai mặt cầu giao nhau ⇔ \(MN \le R_1 + R_2\) ⇔ \(3 \le 1 + 1 = 2\) → <strong>Sai</strong>.<br>
-        Vì \(3 > 2\), hai mặt cầu <strong>không cắt nhau</strong>.
-      </div>
-      <div class="step">
-        <strong>4. Hậu quả:</strong><br>
-        Không có điểm \(S\) nào vừa thuộc mặt cầu đường kính \(AD\) vừa thuộc mặt cầu đường kính \(BC\). Vậy <strong>không tồn tại hình chóp</strong> \(S.ABCD\).
-      </div>
-      <div class="step" style="background: #eef2ff; padding: 12px 16px; border-radius: 10px;">
-        💡 <em>Nếu đề được sửa thành \(AD=3,\; AB=2\) thì hai mặt cầu tiếp xúc nhau và bài toán có nghiệm, thể tích khi đó là \(V = \dfrac{2}{3}\). Nhưng với dữ kiện đã cho, đáp án là <strong>Vô nghiệm</strong>.</em>
-      </div>
+      <div class="warning">⚠️ <strong>KẾT LUẬN:</strong> Với dữ liệu \(AD=2,\; AB=3\), bài toán <strong>VÔ NGHIỆM</strong> – không tồn tại điểm \(S\).</div>
+      <div class="step"><strong>1. Điều kiện từ hai tam giác vuông:</strong><br> - \(\triangle SDA\) vuông tại \(S\) ⇒ \(S\) nằm trên mặt cầu đường kính \(AD\), tâm \(M\) là trung điểm \(AD\), bán kính \(R_1 = AD/2 = 1\).<br> - \(\triangle SCB\) vuông tại \(S\) ⇒ \(S\) nằm trên mặt cầu đường kính \(BC\) (vì \(BC=AD=2\)), tâm \(N\) là trung điểm \(BC\), bán kính \(R_2 = BC/2 = 1\).</div>
+      <div class="step"><strong>2. Khoảng cách giữa hai tâm:</strong> \(MN = AB = 3\).</div>
+      <div class="step"><strong>3. Điều kiện để hai mặt cầu có điểm chung:</strong> \(MN \le R_1 + R_2\) ⇔ \(3 \le 2\) → <strong>Sai</strong>. Vì \(3 > 2\), hai mặt cầu <strong>không cắt nhau</strong>.</div>
+      <div class="step"><strong>4. Hậu quả:</strong> Không có điểm \(S\) → không tồn tại hình chóp.</div>
+      <div class="step" style="background: #eef2ff; padding: 12px 16px; border-radius: 10px;">💡 <em>Nếu đề được sửa thành \(AD=3,\; AB=2\) thì hai mặt cầu tiếp xúc và bài có nghiệm, \(V = \dfrac{2}{3}\).</em></div>
       <div class="ref"><span>📄 Tham chiếu:</span> Định lý Thales trong không gian – Điều kiện giao hai mặt cầu – Góc giữa hai mặt phẳng (trang 1).</div>
     </div>
   </div>
 
-  <!-- ========== BÀI 10 ========== -->
+  <!-- ==================== BÀI 10 ==================== -->
   <div class="problem" id="bai10">
     <h2>Bài 10. Phễu nón – lộn ngược</h2>
-    <div class="de"><strong>Đề:</strong> Phễu nón cao 15 cm. Đổ nước cao 1/3 chiều cao, bịt kín và lộn ngược. Tính chiều cao nước mới.</div>
+    <div class="de"><strong>Đề:</strong> Phễu nón cao 15 cm. Đổ nước cao 1/3 chiều cao, bịt kín, lộn ngược. Tính chiều cao nước mới.</div>
     <div class="hinh"><canvas id="h10" width="300" height="200"></canvas></div>
     <div class="solution">
       <div class="step">Thể tích nước ban đầu: \(V = \frac13\pi(R/3)^2\cdot5 = \frac{5\pi R^2}{27}\).</div>
@@ -194,7 +174,7 @@
     </div>
   </div>
 
-  <!-- ========== BÀI 11 ========== -->
+  <!-- ==================== BÀI 11 ==================== -->
   <div class="problem" id="bai11">
     <h2>Bài 11. Cốc nón + viên bi</h2>
     <div class="de"><strong>Đề:</strong> Cốc nón cao 4, bán kính đáy 2. Thả viên bi bán kính 1, nước dâng phủ kín bi. Tính thể tích nước ban đầu.</div>
@@ -206,7 +186,7 @@
     </div>
   </div>
 
-  <!-- ========== BÀI 12 ========== -->
+  <!-- ==================== BÀI 12 ==================== -->
   <div class="problem" id="bai12">
     <h2>Bài 12. Nón và khối trụ nội tiếp</h2>
     <div class="de"><strong>Đề:</strong> Nón chiều cao gấp 3 bán kính. Thả trụ chiều cao bằng đường kính đáy nón, nước tràn ra 6. Tính diện tích xung quanh nón.</div>
@@ -218,7 +198,7 @@
     </div>
   </div>
 
-  <!-- ========== BÀI 13 ========== -->
+  <!-- ==================== BÀI 13 ==================== -->
   <div class="problem" id="bai13">
     <h2>Bài 13. Nón trong trụ – nước dâng</h2>
     <div class="de"><strong>Đề:</strong> Nón cao 12, đáy nón có đường kính bằng bán kính đáy trụ. Trụ đổ nước cao 12, lấy nón ra. Tính chiều cao nước còn lại.</div>
@@ -230,7 +210,7 @@
     </div>
   </div>
 
-  <!-- ========== BÀI 14 ========== -->
+  <!-- ==================== BÀI 14 ==================== -->
   <div class="problem" id="bai14">
     <h2>Bài 14. Lon trụ và cốc nón cụt</h2>
     <div class="de"><strong>Đề:</strong> Lon trụ (R=4, H=15), cốc nón cụt (r=2, R=3, H=15). Đổ nước sao cho chiều cao bằng nhau. Tính h.</div>
@@ -242,7 +222,7 @@
     </div>
   </div>
 
-  <!-- ========== BÀI 15 ========== -->
+  <!-- ==================== BÀI 15 ==================== -->
   <div class="problem" id="bai15">
     <h2>Bài 15. Hạt cườm – elip xoay</h2>
     <div class="de"><strong>Đề:</strong> Elip \(\frac{x^2}{1.5^2}+y^2=1\) quay quanh Ox, khoan lỗ trụ bán kính 0.2. Tính thể tích còn lại.</div>
@@ -255,7 +235,7 @@
     </div>
   </div>
 
-  <!-- ========== BÀI 16 ========== -->
+  <!-- ==================== BÀI 16 ==================== -->
   <div class="problem" id="bai16">
     <h2>Bài 16. Kiến bò trên hình hộp</h2>
     <div class="de"><strong>Đề:</strong> Hộp 30×50×60. Kiến bò từ A đến C'. Tìm đường đi ngắn nhất.</div>
@@ -267,7 +247,7 @@
     </div>
   </div>
 
-  <!-- ========== BÀI 17 ========== -->
+  <!-- ==================== BÀI 17 ==================== -->
   <div class="problem" id="bai17">
     <h2>Bài 17. Kiến bò quanh hình trụ</h2>
     <div class="de"><strong>Đề:</strong> Trụ R=3, h=4. Kiến bò ngắn nhất để cắt tất cả đường sinh.</div>
@@ -278,7 +258,7 @@
     </div>
   </div>
 
-  <!-- ========== BÀI 18 ========== -->
+  <!-- ==================== BÀI 18 ==================== -->
   <div class="problem" id="bai18">
     <h2>Bài 18. (Chưa có dữ liệu)</h2>
     <div class="de"><strong>Thông báo:</strong> Trong file PDF, bài 18 không có nội dung.</div>
@@ -293,15 +273,144 @@
 </div>
 
 <script>
-  // Các hàm vẽ hình cơ bản
-  function drawTuDien(ctx, w, h) { /* vẽ tứ diện */ }
-  function drawHinhChop(ctx, w, h) { /* vẽ hình chóp */ }
-  function drawNon(ctx, w, h) { /* vẽ nón */ }
-  function drawTru(ctx, w, h) { /* vẽ trụ */ }
-  function drawHinhHop(ctx, w, h) { /* vẽ hình hộp */ }
-  function drawElip(ctx, w, h) { /* vẽ elip */ }
+  // ==================== CÁC HÀM VẼ HÌNH ====================
 
-  // Hàm vẽ bài 9 (cải tiến)
+  function drawTuDien(ctx, w, h) {
+    ctx.clearRect(0, 0, w, h);
+    ctx.strokeStyle = '#1e3a5f';
+    ctx.lineWidth = 2;
+    // Đáy BCD
+    ctx.beginPath();
+    ctx.moveTo(50, 160);
+    ctx.lineTo(220, 170);
+    ctx.lineTo(130, 100);
+    ctx.closePath();
+    ctx.stroke();
+    // Đỉnh A
+    const ax = 140, ay = 40;
+    ctx.beginPath();
+    ctx.arc(ax, ay, 5, 0, 2*Math.PI);
+    ctx.fillStyle = '#b91c1c';
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(50, 160); ctx.lineTo(ax, ay);
+    ctx.moveTo(220, 170); ctx.lineTo(ax, ay);
+    ctx.moveTo(130, 100); ctx.lineTo(ax, ay);
+    ctx.stroke();
+    ctx.fillStyle = '#0f172a';
+    ctx.font = 'bold 14px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('A', ax-15, ay-10);
+    ctx.fillText('B', 30, 175);
+    ctx.fillText('C', 225, 185);
+    ctx.fillText('D', 120, 90);
+  }
+
+  function drawHinhChop(ctx, w, h) {
+    ctx.clearRect(0, 0, w, h);
+    ctx.strokeStyle = '#1e3a5f';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(50, 150);
+    ctx.lineTo(220, 160);
+    ctx.lineTo(130, 90);
+    ctx.closePath();
+    ctx.stroke();
+    const sx = 140, sy = 35;
+    ctx.beginPath();
+    ctx.arc(sx, sy, 5, 0, 2*Math.PI);
+    ctx.fillStyle = '#b91c1c';
+    ctx.fill();
+    ctx.beginPath();
+    ctx.moveTo(50, 150); ctx.lineTo(sx, sy);
+    ctx.moveTo(220, 160); ctx.lineTo(sx, sy);
+    ctx.moveTo(130, 90); ctx.lineTo(sx, sy);
+    ctx.stroke();
+    ctx.fillStyle = '#0f172a';
+    ctx.font = 'bold 14px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('S', sx-15, sy-10);
+    ctx.fillText('A', 30, 165);
+    ctx.fillText('B', 225, 175);
+    ctx.fillText('C', 120, 80);
+  }
+
+  function drawNon(ctx, w, h) {
+    ctx.clearRect(0, 0, w, h);
+    ctx.strokeStyle = '#1e3a5f';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.ellipse(150, 160, 80, 18, 0, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(70, 160);
+    ctx.lineTo(150, 30);
+    ctx.moveTo(230, 160);
+    ctx.lineTo(150, 30);
+    ctx.stroke();
+    ctx.fillStyle = '#0f172a';
+    ctx.font = 'bold 14px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Đỉnh', 135, 25);
+    ctx.fillText('Đáy', 140, 185);
+  }
+
+  function drawTru(ctx, w, h) {
+    ctx.clearRect(0, 0, w, h);
+    ctx.strokeStyle = '#1e3a5f';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.ellipse(150, 160, 70, 18, 0, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.ellipse(150, 40, 70, 18, 0, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(80, 40); ctx.lineTo(80, 160);
+    ctx.moveTo(220, 40); ctx.lineTo(220, 160);
+    ctx.stroke();
+    ctx.fillStyle = '#0f172a';
+    ctx.font = 'bold 14px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Hình trụ', 140, 95);
+  }
+
+  function drawHinhHop(ctx, w, h) {
+    ctx.clearRect(0, 0, w, h);
+    ctx.strokeStyle = '#1e3a5f';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(60, 80, 160, 100);
+    ctx.beginPath();
+    ctx.moveTo(60, 80); ctx.lineTo(110, 35); ctx.lineTo(270, 35); ctx.lineTo(220, 80); ctx.closePath();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(220, 80); ctx.lineTo(270, 35); ctx.lineTo(270, 135); ctx.lineTo(220, 180); ctx.closePath();
+    ctx.stroke();
+    ctx.fillStyle = '#0f172a';
+    ctx.font = 'bold 12px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('A', 45, 195);
+    ctx.fillText('B', 225, 195);
+    ctx.fillText('C', 275, 140);
+    ctx.fillText('D', 115, 30);
+    ctx.fillText('C\'', 265, 50);
+  }
+
+  function drawElip(ctx, w, h) {
+    ctx.clearRect(0, 0, w, h);
+    ctx.strokeStyle = '#1e3a5f';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.ellipse(150, 100, 90, 60, 0, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.fillStyle = '#0f172a';
+    ctx.font = '14px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Elip xoay quanh Ox', 110, 115);
+    ctx.fillText('(hạt cườm)', 130, 135);
+  }
+
+  // ==================== VẼ BÀI 9 ====================
   function drawBai9(ctx, w, h) {
     ctx.clearRect(0, 0, w, h);
     const scale = 70;
@@ -313,7 +422,6 @@
     const N = { x: (B.x + C.x) / 2, y: (B.y + C.y) / 2 };
     const r = 1 * scale;
 
-    // Vẽ đáy
     ctx.strokeStyle = '#1e3a5f';
     ctx.lineWidth = 2.5;
     ctx.beginPath();
@@ -322,39 +430,37 @@
     ctx.closePath();
     ctx.stroke();
 
-    // Nhãn
     ctx.fillStyle = '#0f172a';
-    ctx.font = 'bold 16px Arial';
+    ctx.font = 'bold 16px sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText('A', A.x - 22, A.y + 22);
     ctx.fillText('B', B.x + 20, B.y + 22);
     ctx.fillText('C', C.x + 20, C.y - 12);
     ctx.fillText('D', D.x - 22, D.y - 12);
+
     ctx.fillStyle = '#2563eb';
     ctx.beginPath();
-    ctx.arc(M.x, M.y, 5, 0, 2 * Math.PI);
+    ctx.arc(M.x, M.y, 5, 0, 2*Math.PI);
     ctx.fill();
     ctx.beginPath();
-    ctx.arc(N.x, N.y, 5, 0, 2 * Math.PI);
+    ctx.arc(N.x, N.y, 5, 0, 2*Math.PI);
     ctx.fill();
     ctx.fillStyle = '#0f172a';
-    ctx.font = 'bold 14px Arial';
+    ctx.font = 'bold 14px sans-serif';
     ctx.fillText('M', M.x, M.y + 20);
     ctx.fillText('N', N.x, N.y + 20);
 
-    // Hai đường tròn
     ctx.strokeStyle = '#b91c1c';
     ctx.lineWidth = 2;
     ctx.setLineDash([6, 4]);
     ctx.beginPath();
-    ctx.arc(M.x, M.y, r, 0, 2 * Math.PI);
+    ctx.arc(M.x, M.y, r, 0, 2*Math.PI);
     ctx.stroke();
     ctx.beginPath();
-    ctx.arc(N.x, N.y, r, 0, 2 * Math.PI);
+    ctx.arc(N.x, N.y, r, 0, 2*Math.PI);
     ctx.stroke();
     ctx.setLineDash([]);
 
-    // Chú thích khoảng cách MN
     ctx.strokeStyle = '#f59e0b';
     ctx.lineWidth = 2;
     ctx.setLineDash([4, 4]);
@@ -364,34 +470,35 @@
     ctx.stroke();
     ctx.setLineDash([]);
     ctx.fillStyle = '#f59e0b';
-    ctx.font = 'bold 14px Arial';
-    ctx.fillText('MN = 3', (M.x + N.x)/2, M.y - 60);
+    ctx.font = 'bold 14px sans-serif';
+    ctx.fillText('MN = 3', (M.x+N.x)/2, M.y - 60);
 
-    // Thông báo
     ctx.fillStyle = '#dc2626';
-    ctx.font = 'bold 18px Arial';
+    ctx.font = 'bold 18px sans-serif';
     ctx.fillText('❌ Hai mặt cầu KHÔNG giao nhau', w/2, 50);
     ctx.fillStyle = '#0b2a44';
-    ctx.font = '15px Arial';
+    ctx.font = '15px sans-serif';
     ctx.fillText('Điều kiện: MN ≤ R₁ + R₂ → 3 ≤ 2 → Sai', w/2, 80);
   }
 
-  // Gán các hàm vẽ cho canvas
+  // ==================== GÁN VÀO CANVAS ====================
   window.onload = function() {
     const list = [
       ['h1', drawTuDien], ['h2', drawHinhChop], ['h3', drawHinhChop],
       ['h4', drawHinhChop], ['h5', drawTuDien], ['h6', drawHinhChop],
-      ['h7', drawHinhHop], ['h8', drawHinhChop],
-      ['h9', drawBai9],
+      ['h7', drawHinhHop], ['h8', drawHinhChop], ['h9', drawBai9],
       ['h10', drawNon], ['h11', drawNon], ['h12', drawNon],
       ['h13', (ctx,w,h)=>{ drawTru(ctx,w,h); drawNon(ctx,w,h); }],
       ['h14', (ctx,w,h)=>{ drawTru(ctx,w,h); drawNon(ctx,w,h); }],
       ['h15', drawElip], ['h16', drawHinhHop], ['h17', drawTru],
-      ['h18', (ctx,w,h)=>{ ctx.fillStyle='#6b7a8f'; ctx.font='18px sans-serif'; ctx.fillText('❌ Thiếu đề',100,100); }]
+      ['h18', (ctx,w,h)=>{ ctx.fillStyle='#6b7a8f'; ctx.font='18px sans-serif'; ctx.textAlign='center'; ctx.fillText('❌ Thiếu đề', w/2, h/2); }]
     ];
     list.forEach(([id, fn]) => {
       const canvas = document.getElementById(id);
-      if (canvas) fn(canvas.getContext('2d'), canvas.width, canvas.height);
+      if (canvas) {
+        const ctx = canvas.getContext('2d');
+        fn(ctx, canvas.width, canvas.height);
+      }
     });
     if (window.MathJax) MathJax.typesetPromise();
   };
